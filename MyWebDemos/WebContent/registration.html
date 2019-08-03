@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	h3{
+		color:blue;
+		font-family: sans-serif;
+		font-size:30px;
+		text-align: center;
+	}
+	
+	input[type="text"],input[type="password"]
+,input[type="submit"],input[type="email"]
+{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+	border-radius:15px;
+}
+#form
+{
+    border: 3px solid #f1f1f1;
+	width:20%;
+	padding:60px;
+	border-radius:15px;
+	margin: 0 auto;
+
+}
+#s:hover {
+    opacity: 0.5;
+	background-color:rgb(22, 100, 54);
+}
+
+table,th{
+	 border: solid black 1px;
+	 
+}
+body{
+font-size:18px;
+color:blue;
+}
+</style>
+<meta charset="ISO-8859-1">
+<title>Registration</title>
+</head>
+<body>
+<script>
+	function checkPasswords()
+	{
+		password = document.getElementById("f1").password.value;
+		password1 = document.getElementById("f1").password1.value;
+		if(password!=password1){
+			document.getElementById("errormsg").innerHTML="passwords don't match";
+			return false;
+			}
+			return true;
+	}
+	
+	function checkdob(dob)
+	{
+	alert(dob.value)
+
+	d1=new Date();
+	alert(d1)
+	alert(dob.value>d1)
+	if(dob>d1){
+	alert("Dob not valid")
+	}
+	}
+</script>
+<h3>  Customer  Registration</h3>
+<div id="errormsg" style="color:red;font-size:18px;text-align:center"></div>
+<form id="f1" action="hs" method="post">
+<div style="margin-left:500px">
+<table>
+<tr><td><input type="email" name="email" placeholder="email" required></td></tr>
+<tr><td><input type="password" name="password" placeholder="password" required></td></tr>
+<tr><td><input type="password" name="password1" onblur="checkPasswords()" placeholder="confirm password"></td></tr>
+<tr><td><input type="date" name="dob"/ onblur="checkdob(this)" placeholder="dob"></td></tr>
+<tr><td>
+		<textarea rows="5" cols="50">Address</textarea>
+
+</td></tr>
+<tr><td><select name="city">
+	<option>Mumbai</option>
+	<option>Chennai</option>
+	<option>New Delhi</option>
+</select></td></tr>
+
+<tr><td>
+	Male : <input type="radio" name="gender" value="male"/>&nbsp;
+	Female :<input type="radio" name="gender" value="male"/>
+</td></tr>
+<tr><td>
+	<p> Area of Interest </p>
+	Technical <input type="checkbox" name="interests" value="technical"/>
+	Fiction <input type="checkbox" name="interests" value="fiction"/>
+</td></tr>
+
+<tr><td><input type="submit" value="register"/>&nbsp;
+
+<input type="reset" value="reset"/>
+</td></tr>
+</table>
+</div>
+</form>
+</body>
+</html>
