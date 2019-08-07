@@ -2,13 +2,11 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
   <display-name>BookStoreProject</display-name>
   <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>login1.jsp</welcome-file>
+ 
   </welcome-file-list>
+ 
+ 
   <servlet>
     <description>This is  a Book Servlet</description>
     <display-name>BookServlet</display-name>
@@ -19,7 +17,6 @@
     <servlet-name>BookServlet</servlet-name>
     <url-pattern>/BS</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <description></description>
     <display-name>SecondServlet</display-name>
@@ -30,32 +27,45 @@
     <servlet-name>SecondServlet</servlet-name>
     <url-pattern>/second</url-pattern>
   </servlet-mapping>
-  
   <context-param>
     <param-name>jdbcdriver</param-name>
     <param-value>com.mysql.jdbc.Driver</param-value>
   </context-param>
-  
   <context-param>
     <param-name>dburl</param-name>
     <param-value>jdbc:mysql://localhost:3306/bookstore</param-value>
   </context-param>
-  
   <context-param>
     <param-name>username</param-name>
     <param-value>root</param-value>
   </context-param>
-  
   <context-param>
     <param-name>password</param-name>
     <param-value>root</param-value>
   </context-param>
+  <servlet>
+    <description></description>
+    <display-name>CartServlet</display-name>
+    <servlet-name>CartServlet</servlet-name>
+    <servlet-class>com.store.servlets.CartServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CartServlet</servlet-name>
+    <url-pattern>/CartServlet</url-pattern>
+  </servlet-mapping>
   
-    
-  
-  
-  
-  
-  
+<session-config>
+<session-timeout>30</session-timeout>
+</session-config>  
   
 </web-app>
+
+
+
+
+
+
+
+
+
+

@@ -12,9 +12,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.store.classes.Book;
+import com.store.classes.BookDao;
 import com.store.classes.User;
 import com.store.classes.UserDao;
 import com.store.db.DbConnection;
+import com.store.interfaces.BookDaoI;
 import com.store.interfaces.UserDaoI;
 
 /**
@@ -37,7 +40,6 @@ public class BookServlet extends HttpServlet {
 		//System.out.println("Driver :"+jdbcDriver);
 		
 		DbConnection dbConnection = new DbConnection(jdbcDriver, dbUrl, username, password);
-
 	
 	}
 	
@@ -49,15 +51,20 @@ public class BookServlet extends HttpServlet {
 		
 		UserDaoI userDao=new UserDao();
 		User user = userDao.validateUser(email, password);
-		
+				
 		String path="";
 		if(user==null)
 			path="login.html";
 				
-		else if(user.getRole().equalsIgnoreCase("admin"))
-			path="adminhome.html";
-		else if(user.getRole().equalsIgnoreCase("customer"))
-			path="customerhome.html";
+		else {
+			request.setAttribute("user", user);
+			BookDaoI bookDao=new BookDao();
+			List<Book> bookList = bookDao.getAllBooks();
+		//	System.out.println(bookList);
+			request.setAttribute("bookList",bookList);
+			path="store.jsp";
+		
+		}
 		
 		
 		RequestDispatcher rsp=request.getRequestDispatcher(path);
