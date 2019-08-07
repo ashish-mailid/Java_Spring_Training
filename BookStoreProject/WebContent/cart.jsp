@@ -10,7 +10,15 @@
 
 		<%@ page import="java.util.List" %>
 		
-		<%List<String> cart=(List<String>) session.getAttribute("cart");
+		
+		<% String username = (String)session.getAttribute("username");
+			if(username==null)
+			{%>
+				<jsp:forward page="login1.jsp"/>
+			<%}
+		
+		
+			List<String> cart=(List<String>) session.getAttribute("cart");
 			if(cart==null)
 			{
 		%>

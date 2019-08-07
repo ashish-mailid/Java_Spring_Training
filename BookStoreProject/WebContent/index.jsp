@@ -5,6 +5,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%
+String username = (String)session.getAttribute("username");
+if(username==null)
+{%>
+	<jsp:forward page="login1.jsp"/>
+<%}
+%>
 
 <a href="CartServlet?action=viewcart">View Cart</a> <br><br> 
  <a href="CartServlet?action=logout">LogOut</a>

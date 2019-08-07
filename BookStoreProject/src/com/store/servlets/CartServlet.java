@@ -19,14 +19,17 @@ public class CartServlet extends HttpServlet {
 
 		String action = request.getParameter("action");
 		String path="";
-
+		HttpSession session=null;
 		switch(action)
 		{
 		case "login":
+			session = request.getSession();
 			String username=request.getParameter("email");
 			String password=request.getParameter("password");
-			if(username.equals("sam") && password.equals("sam123"))
+			if(username.equals("sam") && password.equals("sam123")){
 				path="index.jsp";
+				session.setAttribute("username", username);
+			}
 			else
 				path="login.jsp";
 			break;
@@ -38,7 +41,7 @@ public class CartServlet extends HttpServlet {
 
 
 			//System.out.println(cart);
-			HttpSession session = request.getSession();
+			
 			System.out.println("Session Id.."+session.getId());
 
 			cart = (List<String>) session.getAttribute("cart");
