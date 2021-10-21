@@ -20,4 +20,8 @@ public class Customer extends Person {
 		this.walletBalance = walletBalance;
 	}
 	
+	public String toString()
+	{
+		return super.toString()+" "+walletBalance;
+	}
 }

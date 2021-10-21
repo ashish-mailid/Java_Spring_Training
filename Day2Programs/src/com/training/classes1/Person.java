@@ -30,6 +30,10 @@ public class Person {
 		this.dob = dob;
 	}
 	
+	public String toString()
+	{
+		return name+" "+dob;
+	}
 	
 
 }

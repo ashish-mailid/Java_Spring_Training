@@ -6,7 +6,11 @@ import com.training.classes1.Employee;
 
 public class PersonClient {
 
+	 int x;
+	
 	public static void main(String[] args) {
+		
+		System.out.println(new PersonClient().x);
 		
 		Customer p1 = new Customer("sam","12-10-1998",100);
 		
