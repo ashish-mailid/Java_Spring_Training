@@ -1,0 +1,171 @@
+IDE - Integrated Dev Env -- Eclipse , Netbeans, BlueJ, IntelliJ
+
+JDk -- 1.8 
+
+datatypes -- Primitive
+	 byte short int long
+	 float double (default) -- Eg: 3.145
+
+	3.145f
+	char -- 2 bytes  - 0 to 65535  - unicode -- hexadecimal -
+	
+	65 -- 0041
+
+	boolean -- true or false
+
+Reference types -- Predefined arrays/interfaces/classes -- String, Integer,Number,Byte,System,Date etc.
+
+String s1 = "Hello"
+
+Operators:
+		+ - * / % 
+		++ -- 
+		+= -= *= /=
+
+Logical : && || ! & | 
+
+command line arguments : 
+java Sample 12 24
+
+args[0] args[1] .. so on
+	args.length -- 2
+
+Integer.parseInt(args[0])
+Double.parseDouble(args[0])
+
+Static method -- method that is called with the class name
+
+	java Sample -- Sample.main() -- static 
+
+
+public boolean isPrime(int number)  
+	    {
+start loop: ctr=2 till number/2
+	    	// if number % ctr ==0  
+		return false;
+end loop:
+		return true;
+	    	
+	    	
+	    }
+
+	Eg: 8%2 ==0
+	13%2 13%3 4 5 6
+
+arrays:
+
+	int a[] = new int[5]; // [0,0,0,0,0]
+	a.length -- size 
+
+Problem : peter has a blue alto car.
+
+Create a class Employee that has name and email and with necessary functionalities.
+Create a class Car with model and color as attributes with getters,setters and constructors.
+relate these 2 classes using has a relation
+
+
+Package -- collection of classes, organizing the class files.
+
+	src--com.training --  Employee   -- com.training.Employee
+
+	     com.training1 -- Employee 
+
+	com
+	training
+
+instance variables default values -- 0, 0.0 , false, null
+
+problem statement :
+A BookStore has collection of books.
+Book has isbn,title,price and stock.
+
+price and stock of the Book can be updated.
+Book details can be retrieved.
+
+assignment 2 and 7 in classes and objects.
+
+problem statement :
+Create a family of classes : Person --(name,dob)
+	Customer -- WalletBalance
+	Employee -- empId, salary
+	SportsPerson -- rewardpoints
+
+Inheritance
+protected and public members are inherited in any package in the project
+no specifier members are inherited/accessible only in the same package
+private members are not inherited
+static members are not inherited (dont participate in OOP)
+constructors are not inherited
+
+Employee e=new Employee();
+
+	Employee e1 = new Employee(); // eligible for gc
+
+//	e1=e;
+
+//	e1=null;
+
+	e=e1;
+
+	All Base classes like Person,Book,Product or any predefined class like String,Math,Date etc.. extend from Object class.
+
+Object class is the super class for all the classes.
+		getClass(), equals(), hashcode() , finalize(), toString(),wait(),notify(),notifyAll(),clone()
+
+
+Method Overriding -- inheritance
+
+	A method of the base class is redefined/customized in the child class.
+ 
+toString() -- Object 
+
+rules
+
+1.  OR method should be of Same Prototype. (return type- method name- signature)
+2.   OR method can be liberal but not restrictive 
+
+	protected -- public   valid
+	public -- protected , default,private
+
+3.  original method should be visible
+
+	Customer c1= new Customer(...)
+	S.o.p(c1)
+
+
+Overloading --  add(5,7)
+		add(4.5,3.6)
+		add("hello",10);
+		
+		methods that have the same name , defined in the same class or in the child class but their signatures are different
+
+polymorphism -- poly morphs -- many forms.
+	1. static polymorphism -- Overloading
+	2. dynamic polymorphism -- overriding
+
+
+Object obj = new Person();
+	s.o.p(obj); //toString() of Person
+
+	obj = new Customer();
+	s.o.p(obj); // toString() of Customer
+
+8.	An Online Store has offers for different types of users. User can be a registered customer, Employee of the Store or a Student.
+a.	giveOffers() is a common functionality that gives 10% discount to all Customers , 10% reward points to Employees and 20% discount to all Students.
+b.	User has name. Customer has Email.Employee has empCode  and Student has regNo.
+
+c.	Create a Utility Class that calls giveOffers based on the type of User and also prints all the details of User.
+
+
+	int add(int,int)
+	void add(double,double)  -OL
+
+	int add(int,int)
+	void add(int,int)   - illegal
+
+
+
+
+
+
+	
