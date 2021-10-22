@@ -1,6 +1,6 @@
 package com.training.store;
 
-public class User {
+public abstract class User {
 	private String name;
 	public User() {	}
 	public User(String name) {
@@ -19,8 +19,13 @@ public class User {
 		return name+" ";
 	}
 
-	public void giveOffers()
-	{
-		System.out.println("======================");
-	}
+	public abstract void giveOffers();
+	
 }
+
+
+
+
+
+
+
