@@ -3,6 +3,14 @@ package com.training.store;
 public class Employee1 extends User{
 private long empCode;
 
+	public long getEmpCode() {
+	return empCode;
+}
+
+public void setEmpCode(long empCode) {
+	this.empCode = empCode;
+}
+
 	public Employee1() {
 	super();
 }

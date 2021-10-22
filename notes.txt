@@ -163,6 +163,123 @@ c.	Create a Utility Class that calls giveOffers based on the type of User and al
 	int add(int,int)
 	void add(int,int)   - illegal
 
+final for constants
+Final methods cannot be overridden.
+final class cannot be extended
+
+
+	abstract class
+
+1. Base class that has atleast 1 abstract method.
+2. abstract method is a specification/prototype that needs to be implemented in the child class
+3. Abstract class cannot be instantiated.
+	User user = new User(..) // error
+4   can be referenced
+	User user
+5   abstract methods cannot be final
+6   abstract class cannot be final
+7   can be used in dynamic binding for extendibility.
+8.  can have concrete methods
+
+multiple inheritance is not supported.
+
+public class MyFrame extends JFrame
+{
+
+}
+
+
+interface is a construct with specification
+
+	public interface Dog
+	{
+		public void bark();
+	}
+
+	public interface Airplane
+	{
+		public void flies();
+	}
+	
+class Human implements Dog,Airplane
+{
+	public void bark()
+	{
+
+	//code
+	}
+
+	public void flies()
+	{
+		//code
+	}
+	
+}
+
+	1.  Collection of specification.
+	2.  all the methods are abstract and public by default.
+	3	cannot be instantiated
+	4    Dynamic binding.
+	5.   can extend from multiple interfaces
+		interface C extend A,B
+	6 class D implements C
+
+Create an interface Payment that has a behavior to makePayment(double amount).
+
+CashPayment,CardPayment and WalletPayment
+
+2.	Create an interface called Operator that has a method operate(int x,int y) that has multiple implementations. operate() can add 2 integers or multiply 2 integers.
+
+Note : instead of int these should work on any  numerical type use Generic Interface
+
+Create a class that implements the above interfaces, and test the same. 
+
+
+Create an interface MyCollection that stores any element in an array.
+has methods:  add(T t) that adds element at the last vacant space.
+	      print() prints fro left to right.
+
+create implementation class MyArrayList that adds any type with duplicates also
+
+Create implementation class MySet that adds only unique elements
+Test it with a client.
+
+colllections
+
+				Collection (I)
+
+	List (I)		Set (I)
+	
+	ordered			Not Ordered
+	indexed                 Not indexed
+	duplicates              No duplicates
+
+1. ArrayList                    HashSet
+2. LinkedList                   LinkedHashSet (no duplicates but is ordered)
+3 Vector
+	
+Create a collection of ages of students that are stored in an order.
+Create a collection of unique subjects. (HashSet)
+Create a collection of unique subjects in an order. (LinkedHashSet)
+
+Create an application for an online book store where a collection of books (use list) is stored.
+book has isbn,title,price and stock.
+
+book can be added to the collection
+book can be deleted based on isbn
+stock of the book can be updated based on isbn
+display a book based on isbn
+display all books in the store.
+display all books based on a search pattern on title Eg : C  -- C,Cplus,CSharp
+
+Classes to be Created : Book , BookStore , Client
+
+
+	class BookStore{
+			ArrayList<Book> books = new ArrayList<>();
+
+	}
+
 
 
 
