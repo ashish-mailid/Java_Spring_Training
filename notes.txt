@@ -248,7 +248,7 @@ colllections
 
 				Collection (I)
 
-	List (I)		Set (I)
+	List (I)		Set (I)         Queue (I)     AbstractCollection (C) -- Stack
 	
 	ordered			Not Ordered
 	indexed                 Not indexed
@@ -257,6 +257,14 @@ colllections
 1. ArrayList                    HashSet
 2. LinkedList                   LinkedHashSet (no duplicates but is ordered)
 3 Vector
+
+				SortedSet (I)
+					-- elements are sorted
+				TreeSet
+			
+Collection -- add,remove,contains,
+List -- add(index,element),set,get
+Set --	
 	
 Create a collection of ages of students that are stored in an order.
 Create a collection of unique subjects. (HashSet)
@@ -280,7 +288,56 @@ Classes to be Created : Book , BookStore , Client
 
 	}
 
+TreeSet
 
+Create a TreeSet of Product ( code, name,price)
+
+Stack
+
+complexity -- time -- [4,5,6,3,2,1] -- O(n) - complexity
+
+	username,password
+	empid,emp
+
+	Map (key,value)
+
+	[ 1234   ,(1234,"c",120,100)]
+	[ 5674,  (5674,"c",120,100)] 
+
+	O(1) -- hashing  -- O(1234)
+
+					Map (I) 
+Key, value pairs
+Keys are unique                     HashMap (c), LinkedHashMap (c) , Hashtable (c)
+values can duplicate
+Not ordered                            SortedMap (I)  - keys
+				    TreeMap (c)
+
+Map -- put(key,value)
+	get(key)
+	remove,containsKey,containsValue etc..
+
+1.      Create a Map of Account.
+2.	Account has username,password,email,status (boolean)
+
+basic operations on Map
+
+1.	adding an account
+2.      remove an account based on username
+3.      to activate /deactivate the account
+4       view all the accounts.
+5	authenticate the user
+
+
+Arrays  -- searching,max,min,sort,
+Collections
+
+java.lang -- default
+String,StringBuffer,StringBuilder,System etc..
+
+Strings are immutable in java
+	String s1="hello";
+	s1=s1+"world";
 
 
 
