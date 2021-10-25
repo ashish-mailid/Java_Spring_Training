@@ -1,19 +1,21 @@
-package com.training.bookstore;
+package com.training.bookstore1;
 
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
-public class BookStore {
+public class BookStoreSet {
 	
-	private List<Book> books;
+	private Set<Book> books;
 	
-	public List<Book> getBooks() {
+	public Set<Book> getBooks() {
 		return books;
 	}
 
-	public BookStore()
+	public BookStoreSet()
 	{
-		books = new ArrayList<>();
+		books = new LinkedHashSet<>();
 	}
 	
 	public Book getBook(String isbn)
@@ -27,12 +29,9 @@ public class BookStore {
 	}
 	public boolean addBook(Book b1)
 	{
-		if(getBook(b1.getIsbn())==null) {
-		books.add(b1);
-		return true;
-		}
-		return false;
+		return books.add(b1);
 	}
+	
 	public boolean deleteBook(String isbn)
 	{
 		Book b1=getBook(isbn);

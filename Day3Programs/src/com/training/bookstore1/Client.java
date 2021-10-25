@@ -1,4 +1,4 @@
-package com.training.bookstore;
+package com.training.bookstore1;
 
 import java.util.List;
 
