@@ -339,6 +339,88 @@ Strings are immutable in java
 	String s1="hello";
 	s1=s1+"world";
 
+StringBuffer,LocalDate,Random,Math,String Builder.
+
+Exceptions,Inner classes /nested classes,IO.
+
+	Exceptions 
+		Unchecked -- Program compiles.No checking for Exceptions during compile time.
+			Eg: NullPointerException,ArithmeticException,ArrayIndexOutOfboundsException.
+			All that extends RuntimeException
+ 
+		Checked
+			Exceptions that have to be handled.
+			Compiletime error.
+
+			IO,SQL,network,stream ,class  --
+
+Problem: Read 2 numbers from command line , divide one by the other.
+
+Problem : Write some text to a file.
+
+	try{
+
+		try{
+
+		}
+		catch(..)
+		{	
+			try
+			{
+
+			}
+			catch(){ }
+		}		
+
+	}	
+
+problem:
+	
+	 reads from this file.
+
+	Note: initially check if file exists if not create a file through the program
+
+Problem :
+		Write a program to write data to a csv file. (comma seperated value) and read from the same.
+		
+problem: Read a +ve , Non Zero, Single Digit ,number from the keyboard
+	validate the input , for invalid input throw a custom exception.
+		
+	throw
+
+	IO --   ByteStream
+		CharacterStream -- Text files
+
+		BufferedReader, FileReader,FileWriter..
+
+writing and reading objects 
+Write an Object -- Person person 
+
+Serialization is an internal process of breaking java object to bits and bytes before passivating/writing to a file or network or socket.
+
+class Person implements Serializable
+{
+
+}
+
+Serializable is a marker interface - no methods 
+	obj instanceof Serializable 
+
+
+Nested Classes
+
+
+ Building      Room
+   Flower	Petal
+ Restaurant	Menu
+Person		Address	
+
+composition 
+	OuterClass/TopLevel class -- public,default,abstract,final
+	NestedClass -- public,private,protected,default,static,abstract,final
+	               
+		
+
 
 
 
