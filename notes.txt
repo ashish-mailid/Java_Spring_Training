@@ -418,8 +418,58 @@ Person		Address
 composition 
 	OuterClass/TopLevel class -- public,default,abstract,final
 	NestedClass -- public,private,protected,default,static,abstract,final
-	               
-		
+	
+               
+Threads
+	Create 2 functionalities to generate even and odd numbers in a class SeriesGenerator.	
+	Create 2 threads that run even() and odd() independently.	
+
+
+	Thread
+	start(), run(), sleep(s) ,currentThread(s),getName(),setName(),getPriority , setPriority(),
+	isAlive ,join()
+
+
+	There is a class called Account that has some methods for transactions.
+	If the same account is being shared by multiple clients what are the issues faced and
+	how to fix them?
+
+	Atomic and Consistent
+
+
+	synchronized method
+	synchronized block
+
+	ArrayList is not thread safe.
+	Vector is Thread safe
+
+	HashTable is thread safe
+
+	Thread Communication ( 1 way)
+
+	1.  Generating a random number and sum ( 1 client)
+	2.  printSum() (1 client)
+
+
+	1. Generates a random number (Producer)
+	2. FInd the factorial   (Consumer)
+
+	wait() notify() notifyAll() -- Object class
+
+
+Java 8 Features
+	1. Lambda Expressions , functional interfaces, static and default methods in Interface
+	2. forEach 
+	3. Stream API
+
+
+Create a List of Persons where Person has name and age.
+from a list of Person Objects print all the persons whose age is < 18
+
+
+
+
+
 
 
 
