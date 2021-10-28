@@ -3,8 +3,10 @@ package com.training.clients;
 import java.util.List;
 import java.util.Scanner;
 
+import com.training.classes.Admin;
 import com.training.classes.Book;
 import com.training.classes.Customer;
+import com.training.classes.User;
 import com.training.dao.BookStoreDao;
 import com.training.dao.LoginDao;
 
@@ -24,25 +26,34 @@ public class StoreClient {
 		String username = sc.next();
 		System.out.println("Enter password");
 		String password = sc.next();
-		Customer customer = loginDao.validate(username,password);
-		if(customer!=null)
+		User user = loginDao.validate(username,password);
+		//System.out.println(user);
+		if(user==null)
 		{
-			System.out.println("welcome "+customer.getName());
+			System.out.println("Invalid Credentials..Try again");
+		}
+		else if(user!=null && user instanceof Customer)
+		{
+			System.out.println("welcome "+((Customer)user).getName());
 			
 			//display all the Books in the store
 			BookStoreDao bookDao  = new BookStoreDao();
-			bookDao.getAllBooks();
+			print(bookDao.getAllBooks());
 			//read isbn from the customer
 			// get book based on isbn and add to the Cart
 			//Repeat adding the book
 			//customer enters 0 to checkout 
 			//views the bill when he checks out
 		}
+		else if(user!=null && user instanceof Admin)
+		{
+			System.out.println("Admin");
+		}
 		
 	}
 
 	public static void print(List<Book> bookList) {
-		bookList.forEach(System.out::println);
+		bookList.forEach(i->System.out.println(i));
 		
 	}
 

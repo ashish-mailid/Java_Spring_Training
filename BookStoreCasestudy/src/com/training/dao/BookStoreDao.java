@@ -19,10 +19,10 @@ public class BookStoreDao implements BookDaoInterface {
 	public BookStoreDao()
 	{
 		connection = DbConnection.getConnection();
-		if(connection != null)
-			System.out.println("Connection Successful");
-		else
-			System.out.println("Not connected");
+		/*
+		 * if(connection != null) System.out.println("Connection Successful"); else
+		 * System.out.println("Not connected");
+		 */
 		
 	}
 
