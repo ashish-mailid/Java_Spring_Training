@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.training.classes.Book" lazy="false" table="book">
+
+		<id name="isbn" column="isbn"> <!-- primary key -->
+			<generator class="assigned">   <!-- we assign the value -->
+			</generator>
+		</id>
+
+		<property name="title" type="string" column="title"
+			not-null="true" />
+		<property name="price" type="double" column="price"
+			not-null="true" />
+		<property name="stock" type="long" column="stock"
+			not-null="true" />
+		<property name="category" type="string" column="category" />
+	</class>
+</hibernate-mapping>
