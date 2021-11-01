@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="onetomany.Customer" table="CUSTOMER">
+		<id name="id" type="long" column="ID">
+			<generator class="native" />
+		</id>
+		<property name="firstName">
+			<column name="FIRSTNAME" />
+		</property>
+		<property name="lastName">
+			<column name="LASTNAME" />
+		</property>
+		<property name="email">
+			<column name="EMAIL" />
+		</property>
+		<!-- <list name="complaints" cascade="all">
+			<key column="parentId" />
+			<index column="idc" />
+			<one-to-many class="onetomany.Complaint" />
+		</list> -->
+		
+		<!-- <bag name="complaints" cascade="all">  
+          <key column="parentId"></key>  
+          <one-to-many class="onetomany.Complaint"/>  
+</bag>   -->
+
+<map name="complaints" cascade="all">
+         <key column="parentId"/>
+         <index column="idc" type="int"/>
+         <one-to-many class="onetomany.Complaint"/>
+      </map>
+</class>
+		<class name="onetomany.Complaint" table="COMPLAINT">
+			<id name="compNum" type="long" column="COMPNUM">
+				<generator class="increment" />
+			</id>
+
+			<property name="text" column="TEXT" />
+
+			<many-to-one name="cust" class="onetomany.Customer" column="parentId" />
+
+		</class>
+
+
+</hibernate-mapping>

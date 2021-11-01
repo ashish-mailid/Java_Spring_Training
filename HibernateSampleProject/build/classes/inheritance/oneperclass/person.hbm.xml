@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>  
+<class name="inheritance.oneperclass.Person" table="Person2">  
+<id name="name">  
+<generator class="assigned"></generator>  
+</id>  
+  
+
+<property name="title"></property>  
+            
+<joined-subclass name="inheritance.oneperclass.Student" table="student2"> 
+<key column="pid"></key>  
+<property name="grade"></property>  
+</joined-subclass>  
+            
+<joined-subclass name="inheritance.oneperclass.SeniorCitizen" table="seniorcitizen2">  
+<key column="pid"></key>
+<property name="age"></property>  
+
+</joined-subclass>  
+            
+            
+     
+            
+  
+</class>  
+            
+</hibernate-mapping>  
