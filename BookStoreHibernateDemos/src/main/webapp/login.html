@@ -1,0 +1,124 @@
+<html>
+<head><title>My web site</title>
+
+<style>
+#divform{
+	align:center;
+}
+body {font-family: Arial, Helvetica, sans-serif;
+
+
+}
+/* Bordered form */
+form{
+    border: 3px solid #f1f1f1;
+	width:20%;
+	padding:50px;
+	border-radius:15px;
+	margin: 0 auto;
+}
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+	border-radius:15px;
+}
+
+button {
+    background-color: #00F5FF;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+	border-radius:15px;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+button:hover {
+    opacity: 0.5;
+	background-color: #641E16;
+}
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+</style>
+
+<script>
+function check(){
+
+uname=form1.username.value;
+password=form1.password.value;
+if(uname=="")
+{
+//alert("empty")
+	//document.getElementById("l1").style.color="red"
+	document.getElementById("l1").style.cssText='width:200px;font-size:15px;color:red'
+	document.getElementById("l1").innerHTML="Username empty";
+
+	return false;
+
+}
+else if(password=="")
+{
+document.getElementById("l1").style.color="red"
+document.getElementById("l1").innerHTML="Password empty";
+return false;
+}
+showform('hide')
+return true;
+}
+
+function showform(status)
+{
+if(status=='show')
+document.getElementById('popform').style.visibility='visible'
+else
+document.getElementById('popform').style.visibility='hidden'
+}
+</script>
+</head>
+<div id="popform">
+
+<form  name="form1" action="BookServlet" onsubmit="return check()" method="get">
+
+<div id="l1">here</div>
+  <div class="imgcontainer">
+    <img src="avatar.jpg" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+  
+    <label id="l1" for="uname"><b>Username</b></label>
+	<input type="text" placeholder="Enter Username" name="username" >
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" >
+
+    <button type="submit" name="action" value="login">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="BookServlet?action=forgot">password?</a></span>
+  </div>
+</form>
+
+</div>
+

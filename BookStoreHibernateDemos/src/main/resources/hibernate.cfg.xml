@@ -34,6 +34,7 @@
 		<mapping class="com.training.classes.Login"/>
 		<mapping class="com.training.classes.Customer"/>
 		<mapping class="com.training.classes.Address"/>
+		<mapping class="com.training.classes.Book"/>
 		
 	</session-factory>
 

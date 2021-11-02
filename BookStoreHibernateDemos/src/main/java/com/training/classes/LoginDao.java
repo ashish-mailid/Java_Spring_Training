@@ -36,44 +36,13 @@ public class LoginDao {
 			query.setParameter("username", username);
 			Customer customer = (Customer) query.getSingleResult();
 			//System.out.println(customer.getLogin().getUsername());
+			session.close();
 			return customer;
 		}
 		return null;
 	}
 
-	public static void main(String[] args) {
-		LoginDao loginDao=new LoginDao();
-		
-		//add record to usersnew and customernew
-		
-		
-		  /*Login loginCustomer = new Login("sam", "sam123", "ROLE_CUSTOMER");
-		  
-		  Customer customer1 = new Customer("Samson","sam@gmail.com", "9853567777",
-		  loginCustomer);
-		  
-		  //Addresses
-		  List<Address> addressList = Arrays.asList(new Address(101, "Church St", "Bengaluru", "KA"),
-				  new Address(402, "Mount rd", "Chennai", "TN"));
-		  
-		  customer1.setAddressList(addressList);
-		
-		  Session session = sessionFactory.openSession();
-		  session.getTransaction().begin(); session.save(customer1); // cascades
-		  session.getTransaction().commit();  */
-		 
-				
-		Customer customer = loginDao.validateUser("sam", "sam123");
-		System.out.println("Customer Details"+customer);
-		System.out.println(customer.getAddressList());
-		
-		// customer can update his phone no based on username
-		
-		// customer can delete address  based on username
-		
-		// customer can add a new address based on username
-		
-	}
+	
 }
 
 
