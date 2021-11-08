@@ -1,0 +1,24 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+<!-- <bean id="bean1" class="com.training.bean.HelloWorld">
+
+<constructor-arg name="message" value="This is a new hello message from constructor"> 
+</constructor-arg>
+
+<constructor-arg name="name" value="Peter"> 
+</constructor-arg>
+
+</bean> -->
+
+<bean id="bean1" class="com.training.bean.HelloWorld">
+
+<property name="message" value="This is a message through a setter"></property>
+<property name="name" value="Radha"></property>
+
+</bean>
+
+</beans>
