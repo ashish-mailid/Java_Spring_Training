@@ -4,9 +4,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.training.bean.AddOperator;
+import com.training.bean.FilePrinter;
 import com.training.bean.MultiplyOperator;
+import com.training.bean.MultiplyOperator1;
 import com.training.bean.OperatorDemo1;
 import com.training.interfaces.Operator;
+import com.training.interfaces.Operator1;
+import com.training.interfaces.Printer;
 
 @Configuration
 public class MyConfiguration {
@@ -20,9 +24,13 @@ public class MyConfiguration {
 	}
 
 	
-	@Bean
-	public Operator getOperator()
-	{
-		return new MultiplyOperator();
-	}
+	  @Bean public Operator1 getOperator() { return new MultiplyOperator1(); }
+	  
+	  
+	  @Bean
+	  public Printer getPrinter()
+	  {
+		  return new FilePrinter();
+	  }
+	 
 }
