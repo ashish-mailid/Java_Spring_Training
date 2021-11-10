@@ -11,5 +11,8 @@ public interface BookServiceI {
 	public Book getBook(String isbn);
 	public Book deleteBook(String isbn);
 	public Book upateBook(String isbn,long newStock);
+	
+	// retrieve data based on title
+	
 
 }
