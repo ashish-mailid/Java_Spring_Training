@@ -7,22 +7,28 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.training.bean.HelloWorld;
 import com.training.bean.OperatorDemo;
-import com.training.bean.OperatorDemo1;
 import com.training.config.MyConfiguration;
-import com.training.interfaces.Printer;
+import com.training.interfaces.Operator;
+import com.training.interfaces.ServiceI;
 
-
+/**
+ * Hello world!
+ *
+ */
 public class App3 
 {
     public static void main( String[] args )
     {
-        
-    	AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyConfiguration.class);
-    	OperatorDemo1 opBean  = (OperatorDemo1) context.getBean(OperatorDemo1.class);
-    	opBean.execute(12, 7);
+       
+AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyConfiguration.class);
+
+	ServiceI serviceI = (ServiceI) context.getBean(ServiceI.class);
+	
+	System.out.println(serviceI.sayHelloService());
     	
-    	Printer printBean = context.getBean(Printer.class);
-    	printBean.print(100);
-    	
+	OperatorDemo op = (OperatorDemo)context.getBean(OperatorDemo.class);
+	System.out.println(op.getResult(12, 34));
     }
+    
+    
 }

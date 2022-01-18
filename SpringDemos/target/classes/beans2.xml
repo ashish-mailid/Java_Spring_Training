@@ -1,17 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
-xsi:schemaLocation="http://www.springframework.org/schema/beans 
-http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
 
-<bean id="operator" class="com.training.bean.MultiplyOperator">
-</bean>
+	<bean id="operator" class="com.training.bean.MultiplyOperator">
+	</bean>
 
-<bean id="demo" class="com.training.bean.OperatorDemo" init-method="init" destroy-method="close" scope="singleton"
-autowire="byName"
->
-<!-- <property name="operator" ref="op"/> -->
-</bean>
+
+
+	<bean id="demo" class="com.training.bean.OperatorDemo"
+		autowire="byName" init-method="init" destroy-method="end">
+
+		<!-- <property name="operator" ref="op"> </property> -->
+		<property name="addressList">
+			<list>
+				<value>INDIA</value>
+				<value>Pakistan</value>
+				<value>USA</value>
+				<value>UK</value>
+			</list>
+		</property>
+
+
+	</bean>
+
 
 
 </beans>
